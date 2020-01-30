@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  
+<bean class="thread.Fuel" id="fuel">  
+<constructor-arg value="5"/>  
+</bean>  
+
+<bean class="thread.Satellite" id="satellite">  
+<property name="Launched" value="15"></property>
+<property name="Location" value="banglore"></property>
+</bean>  
+
+<bean class="thread.Rocket" id="rocket">  
+<constructor-arg ref="fuel"/>  
+<property name="Sat" ref="satellite"></property>
+<property name="countryName" value="india"></property>
+  </bean>
+  
+  <bean class="thread.Threadimpl" id="threadimpl"> 
+  </bean>
+  <bean class="thread.Labour" id="labour">  
+<constructor-arg value="abcde"/>  
+<property name="Experience" value="10"></property>
+<property name="Threadimpl" ref="threadimpl"></property>
+  </bean>
+  
+  
+</beans>  
+  
